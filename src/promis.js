@@ -1,11 +1,21 @@
 'use strict';
 
 function fibs(number) {
-  let n1 = 0;
-  let n2 = 1;
-  for (let i = number; i >= 0; i--) {
-    n1 = n1 + n2;
-    n2 = n1;
+  let n1 = 0,
+    n2 = 1,
+    nextTerm;
+  for (let i = 1; i <= number; i++) {
+    console.log(n1);
+    nextTerm = n1 + n2;
+    n1 = n2;
+    n2 = nextTerm;
   }
-  return n1;
+}
+
+function fibsRec(number) {
+  if (number < 2) {
+    return number;
+  } else {
+    return fibsRec(number - 1) + fibsRec(number - 2);
+  }
 }
