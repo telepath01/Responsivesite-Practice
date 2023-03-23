@@ -1,17 +1,11 @@
 'use strict';
 
-function countDown(n) {
-  for (let i = n; i > 0; i--) {
-    console.log(i);
+function fibs(number) {
+  let n1 = 0;
+  let n2 = 1;
+  for (let i = number; i >= 0; i--) {
+    n1 = n1 + n2;
+    n2 = n1;
   }
-  console.log('done');
-}
-
-function countDownRecursive(n) {
-  if (n <= 0) {
-    console.log('done');
-    return;
-  }
-  console.log(n);
-  countDownRecursive(n - 1);
+  return n1;
 }
